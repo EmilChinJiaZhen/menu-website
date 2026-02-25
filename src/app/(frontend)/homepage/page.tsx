@@ -24,12 +24,12 @@ export default async function HomePage() {
       {/* Cart Button */}
       <div className="flex justify-end p-4">
         <Link href="/cart">
-          <button className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
+          <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
             🛒 Cart
           </button>
         </Link>
         <Link href="/kitchen">
-          <button className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition ml-4">
+          <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition ml-4">
             🍳 Kitchen
           </button>
         </Link>

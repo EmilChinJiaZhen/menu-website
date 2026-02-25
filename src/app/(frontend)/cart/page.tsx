@@ -19,7 +19,7 @@ export default async function CartPage() {
       <div className="flex flex-row justify-between">
         <h1 className="text-2xl font-bold mb-4">🛒 Cart</h1>
         <Link href="/homepage">
-          <button className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
+          <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
             🏠 Home
           </button>
         </Link>
@@ -30,7 +30,7 @@ export default async function CartPage() {
         <CartList carts={carts.docs} />
       )}
       <Link href="/kitchen">
-        <button className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition mt-2">
+        <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition mt-2">
           View Kitchen
         </button>
       </Link>

@@ -46,10 +46,10 @@ export function CartList({ carts }: { carts: any[] }) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 bg-pink-400 rounded-lg">
       {carts.map((cart) => (
         <div key={cart.id} className="border rounded-lg p-4">
-          <p><strong>Total:</strong> RM {cart.total ?? 0}</p>
+          {/* <p><strong>Total:</strong> RM {cart.total ?? 0}</p> */}
           {/* <p><strong>Status:</strong> {cart.status}</p> */}
 
           <h2 className="mt-2 font-semibold">Items:</h2>
@@ -66,7 +66,7 @@ export function CartList({ carts }: { carts: any[] }) {
                   )}
                   <div>
                     <p><strong>{item.name}</strong></p>
-                    <p>Price: RM {item.price}</p>
+                    {/* <p>Price: RM {item.price}</p> */}
                     <p>Quantity: {item.quantity}</p>
                   </div>
                   <button
@@ -85,7 +85,7 @@ export function CartList({ carts }: { carts: any[] }) {
           <button
             onClick={() => handleCheckout(cart.id)}
             disabled={loadingCart === cart.id}
-            className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-800 transition disabled:opacity-50"
+            className="mt-4 bg-green-400 text-white px-4 py-2 rounded hover:bg-green-800 transition disabled:opacity-50"
           >
             {loadingCart === cart.id ? "Sending..." : "Checkout"}
           </button>

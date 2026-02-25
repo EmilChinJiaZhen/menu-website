@@ -21,14 +21,10 @@ export default function MainCourseSwiper({content}: Readonly<{content: Homepage[
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={5}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
         breakpoints={{ // when window width is >= 320px
           0: {
-            slidesPerView: 1,
-            spaceBetween: 16,
-            centeredSlides: true,
+            slidesPerView: 2,
+            spaceBetween: 50,
           },
           430: {
             slidesPerView: 2,
@@ -50,9 +46,9 @@ export default function MainCourseSwiper({content}: Readonly<{content: Homepage[
           isValidMedia(item.maincoursePicture) && (
             <SwiperSlide key={item.id ?? item.maincourseName}>
               <div className="flex flex-col items-center relative w-48 cursor-pointer" onClick={() => setSelectedItem(item)}>
-                <p className="text-sm">
+                {/* <p className="text-sm">
                   RM {item.maincoursePrice}
-                </p>
+                </p> */}
                 <div className='relative w-48 h-48'>
                   <Image
                     src={item.maincoursePicture.url}
@@ -74,14 +70,14 @@ export default function MainCourseSwiper({content}: Readonly<{content: Homepage[
 
       {/* Modal */}
       {selectedItem && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-gray-700 rounded-lg p-6 max-w-md w-full relative">
             <button className="absolute top-2 right-2 text-white hover:text-black" onClick={() => setSelectedItem(null)}
             >
               ✕
             </button>
             <div className="flex flex-col items-center">
-              <p className="text-sm mb-2">RM {selectedItem.maincoursePrice}</p>
+              {/* <p className="text-sm mb-2">RM {selectedItem.maincoursePrice}</p> */}
               <div className="relative w-48 h-48 mb-4">
                 <Image src={selectedItem.maincoursePicture.url} fill unoptimized alt={selectedItem.maincoursePicture.alt} className="object-cover rounded-xl" />
               </div>

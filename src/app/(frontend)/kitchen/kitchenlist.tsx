@@ -46,10 +46,10 @@ export function KitchenList({ carts }: { carts: any[] }) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 bg-pink-400 rounded-lg">
       {carts.map((cart) => (
         <div key={cart.id} className="border rounded-lg p-4">
-          <p><strong>Total:</strong> RM {cart.total ?? 0}</p>
+          {/* <p><strong>Total:</strong> RM {cart.total ?? 0}</p> */}
           <p><strong>Status:</strong> {cart.status}</p>
 
           <h2 className="mt-2 font-semibold">Items:</h2>
@@ -66,15 +66,15 @@ export function KitchenList({ carts }: { carts: any[] }) {
                   )}
                   <div>
                     <p><strong>{item.name}</strong></p>
-                    <p>Price: RM {item.price}</p>
+                    {/* <p>Price: RM {item.price}</p> */}
                     <p>Quantity: {item.quantity}</p>
                   </div>
                   <button
                     onClick={() => handleDeleteItem(cart.id, item.id)}
                     disabled={loadingItem === item.id}
-                    className="ml-auto bg-red-600 text-white px-2 py-1 rounded hover:bg-red-800 transition disabled:opacity-50"
+                    className="ml-auto bg-green-400 text-white px-2 py-1 rounded hover:bg-red-800 transition disabled:opacity-50"
                   >
-                    {loadingItem === item.id ? "Removing..." : "Remove"}
+                    {loadingItem === item.id ? "Removing..." : "Serve"}
                   </button>
                 </div>
               </li>
