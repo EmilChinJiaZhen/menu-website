@@ -10,7 +10,9 @@ export async function POST(req: Request) {
     const updatedCart = await payload.update({
       collection: "carts",
       id: cartId,
-      data: { status: "checked_out" },
+      data: { 
+        status: "checked_out",
+      },
     });
 
     return NextResponse.json({ success: true, cart: updatedCart });

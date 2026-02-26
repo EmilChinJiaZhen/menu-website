@@ -15,6 +15,7 @@ export default function BevarageSwiper({content}: Readonly<{content: Homepage['b
   const [loading, setLoading] = useState(false);
 
   return (
+    <div className="container mx-auto px-4 mt-2 mb-2">
     <>
       <Swiper
         // install Swiper modules
@@ -24,7 +25,7 @@ export default function BevarageSwiper({content}: Readonly<{content: Homepage['b
         breakpoints={{ // when window width is >= 320px
           0: {
             slidesPerView: 2,
-            spaceBetween: 50,
+            spaceBetween: 90,
           },
           430: {
             slidesPerView: 2,
@@ -59,7 +60,7 @@ export default function BevarageSwiper({content}: Readonly<{content: Homepage['b
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
-                <h3 className="mt-2 text-lg font-semibold">
+                <h3 className="mt-2 text-lg font-semibold mb-2">
                   {item.bevarageName}
                 </h3>
               </div>
@@ -70,7 +71,7 @@ export default function BevarageSwiper({content}: Readonly<{content: Homepage['b
 
       {/* Modal */}
       {selectedItem && (
-        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50 ml-2 mr-2">
           <div className="bg-gray-700 rounded-lg p-6 max-w-md w-full relative">
             <button className="absolute top-2 right-2 text-white hover:text-black" onClick={() => setSelectedItem(null)}
             >
@@ -117,5 +118,6 @@ export default function BevarageSwiper({content}: Readonly<{content: Homepage['b
         </div>
       )}
     </>
+    </div>
   )
 }

@@ -15,6 +15,7 @@ export default function SnackSwiper({content}: Readonly<{content: Homepage['snac
   const [loading, setLoading] = useState(false);
   
   return (
+    <div className="container mx-auto px-4 mt-2 mb-2">
     <>
       <Swiper
         // install Swiper modules
@@ -24,7 +25,7 @@ export default function SnackSwiper({content}: Readonly<{content: Homepage['snac
         breakpoints={{ // when window width is >= 320px
           0: {
             slidesPerView: 2,
-            spaceBetween: 50,
+            spaceBetween: 90,
           },
           430: {
             slidesPerView: 2,
@@ -70,7 +71,7 @@ export default function SnackSwiper({content}: Readonly<{content: Homepage['snac
       </Swiper>
       {/* Modal */}
       {selectedItem && (
-        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50 ml-2 mr-2">
           <div className="bg-gray-700 rounded-lg p-6 max-w-md w-full relative">
             <button className="absolute top-2 right-2 text-white hover:text-black" onClick={() => setSelectedItem(null)}
             >
@@ -117,5 +118,6 @@ export default function SnackSwiper({content}: Readonly<{content: Homepage['snac
         </div>
       )}
     </>
+    </div>
   )
 }

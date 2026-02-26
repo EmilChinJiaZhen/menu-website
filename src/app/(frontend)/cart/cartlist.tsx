@@ -4,6 +4,7 @@ import { useState } from "react";
 export function CartList({ carts }: { carts: any[] }) {
   const [loadingItem, setLoadingItem] = useState<string | null>(null);
   const [loadingCart, setLoadingCart] = useState<string | null>(null);
+  const [checkoutMessage, setCheckoutMessage] = useState<string | null>(null);
 
   async function handleDeleteItem(cartId: string, itemId: string) {
     setLoadingItem(itemId);
@@ -37,6 +38,7 @@ export function CartList({ carts }: { carts: any[] }) {
       const data = await res.json();
       if (data.success) {
         window.location.reload();
+        alert("✅ Order sent to kitchen");
       } else {
         alert("Error checking out cart: " + data.error);
       }
@@ -47,6 +49,11 @@ export function CartList({ carts }: { carts: any[] }) {
 
   return (
     <div className="space-y-6 bg-pink-400 rounded-lg">
+      {checkoutMessage && (
+        <div className="mb-4 p-3 bg-green-200 text-green-800 rounded">
+          {checkoutMessage}
+        </div>
+      )}
       {carts.map((cart) => (
         <div key={cart.id} className="border rounded-lg p-4">
           {/* <p><strong>Total:</strong> RM {cart.total ?? 0}</p> */}

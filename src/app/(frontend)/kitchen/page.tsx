@@ -17,7 +17,7 @@ export default async function KitchenPage() {
   return (
     <div className="p-6">
       <div className="flex flex-row justify-between">
-        <h1 className="text-2xl font-bold mb-4">🍳 Kitchen</h1>
+        <h2 className="text-2xl font-bold mb-4">🍳Kitchen</h2>
         <Link href="/homepage">
           <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition">
             🏠 Home

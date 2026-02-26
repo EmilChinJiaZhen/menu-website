@@ -28,11 +28,6 @@ export default async function HomePage() {
             🛒 Cart
           </button>
         </Link>
-        <Link href="/kitchen">
-          <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition ml-4">
-            🍳 Kitchen
-          </button>
-        </Link>
       </div>
 
       <MainCourse content={homepageData.maincourseSection}></MainCourse>
